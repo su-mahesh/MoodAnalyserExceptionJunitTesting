@@ -11,14 +11,14 @@ public class MoodAnanlyser {
     MoodAnanlyser(String message){
         this.message = message;
     }
-    public String analyseMood()  {
+    public String analyseMood() throws ModdAnalysisException {
         try {
             if (message.toLowerCase().contains("sad"))
                 return "SAD";
             else
                 return "HAPPY";
         }catch (NullPointerException e){
-            return "HAPPY";
+            throw new ModdAnalysisException("please enter proper message");
         }
     }
 
