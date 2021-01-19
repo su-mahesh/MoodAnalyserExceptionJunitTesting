@@ -30,8 +30,9 @@ public class MoodAnalyserTest {
             exceptionRule.expect(ModdAnalysisException.class);
             mood = moodAnanlyser.analyseMood();
         } catch (ModdAnalysisException e) {
-            e.printStackTrace();
+            Assert.assertEquals(ModdAnalysisException.ExceptionType.ENTERED_NULL, e.exceptionType);
         }
+
 
     }
 }

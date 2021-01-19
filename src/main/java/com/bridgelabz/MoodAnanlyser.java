@@ -13,12 +13,14 @@ public class MoodAnanlyser {
     }
     public String analyseMood() throws ModdAnalysisException {
         try {
+            if(message.length() == 0)
+                throw new ModdAnalysisException(ModdAnalysisException.ExceptionType.ENTERED_EMPTY, "please enter proper message");
             if (message.toLowerCase().contains("sad"))
                 return "SAD";
             else
                 return "HAPPY";
         }catch (NullPointerException e){
-            throw new ModdAnalysisException("please enter proper message");
+            throw new ModdAnalysisException(ModdAnalysisException.ExceptionType.ENTERED_NULL, "please enter proper message");
         }
     }
 
