@@ -4,11 +4,15 @@ import java.util.Locale;
 
 public class MoodAnanlyser {
 
-    MoodAnanlyser(){}
-    MoodAnanlyser(String message){
 
+    private String message;
+
+    MoodAnanlyser(){
     }
-    public String analyseMood(String message)  {
+    MoodAnanlyser(String message){
+        this.message = message;
+    }
+    public String analyseMood()  {
         if (message.toLowerCase().contains("sad"))
             return "SAD";
         else
